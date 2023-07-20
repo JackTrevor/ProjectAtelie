@@ -17,7 +17,7 @@ body {
 header {
     width: 100%;
     height: auto;
-    background-color:#399ade;
+    background-color:#7FB685;
     justify-content: flex-end;
     align-items: center;
     display: grid;
@@ -83,18 +83,19 @@ aside.show {
     margin: 0;
     padding-top: 140px;
 }
-
 main {
     display: flex;
-    padding-top: 140px; 
+    text-align: center;
+}
+.main--products {
+    display: flex;
+    text-align: center;
+    padding: 140px;
 }
 
 h1 {
     font-family:'Hepta Slab', Helvetica, Arial;
     text-align: center;
-}
-h2 {
-    display: none;
 }
 .models-area {
     display:grid;
@@ -160,7 +161,7 @@ h2 {
     margin-top:5px;
 }
 
-.models-item--desc {
+.models-item--disc {
     font-size:13px;
     color:#555;
     margin-top:10px;
@@ -409,14 +410,23 @@ h2 {
 .cart--finalizar:hover {
     background-color:#35af4a;
 }
-main {
-    text-align: center;
-}
+
 main p {
     font-size: 2.9em;
 }
 .hero img {
-    width: 70%;
+    width: 50%;
+}
+.hero {
+    text-align: center;
+    padding-top: 140px;
+}
+.hero h2 {
+    font-size: 1.9em;
+}
+.hero p {
+    font-size: 1.9em;
+    padding: 0 350px 0 350px;
 }
 .products-examples img {
     width: 30%;
@@ -427,16 +437,54 @@ footer {
     padding: 1em;
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    background-color: #244c88;
+    background-color: #7FB685;
     margin-bottom: auto;
   }
   footer img {
     width: 50px;
   }
   footer p {
-    color: red;
+    color: white;
+    text-align: center;
+    font-size: 1.9em;
+  }
+  .button {
+    border-radius: 4px;
+    background-color: #7FB685;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+    margin: 5px;
+    position: absolute;
+    left: 45%;
   }
 
+  .button span {
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 
 @media (max-width:1000px) {
@@ -459,6 +507,12 @@ footer {
     .menu-openner {
         width: 60px;
     }
+    .hero img {
+        width: 100%;
+    }
+    .hero p {
+        padding: 0;
+    }
     h1 {
         display: none;
     }
@@ -468,6 +522,10 @@ footer {
     main {
         text-align: center;
     }
+    .main--home {
+        padding: 0px;
+    }
+
     .products-examples img {
         width: 100%;
     }
@@ -476,14 +534,13 @@ footer {
         font-size: var(--small-font);
         padding: 1em;
         text-align: center;
-        background-color: #244c88;
       }
       footer img {
         width: 70px;
         margin: auto;
       }
       footer p {
-        color: red;
+        color: white;
       }
 }
 
